@@ -94,19 +94,23 @@ namespace PocetZnaku
         {
             string[] lower_alpha = { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
             string[] upper_alpha = { "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z" };
-            string[] alpha = new string[lower_alpha.Length + upper_alpha.Length]; // Tento řádek a další dva pod ním tvoří pole alpha což je lower_alpha a upper_alpha dohromady.
-            lower_alpha.CopyTo(alpha, 0);
-            upper_alpha.CopyTo(alpha, alpha.Length - upper_alpha.Length);
+            string[] alpha = new string[upper_alpha.Length + lower_alpha.Length]; // Deklarace pole alpha s velikostí 52 (Součet délek polí upper_alpha a lower_alpha)
+            upper_alpha.CopyTo(alpha, 0);
+            lower_alpha.CopyTo(alpha, upper_alpha.Length); // Přidá pole lower_alpha začínajíci na indexu 26 (Velké "z" je na indexu 25)(Vzdálenost pole upper_alpha)
             string[] num = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
             switch (arr_choice)
             {
+                case "-u":
+                case "-U":
+                    return upper_alpha;
+                    break;
                 case "-l":
                 case "-L":
                     return lower_alpha;
                     break;
-                case "-u":
-                case "-U":
-                    return upper_alpha;
+                case "-a":
+                case "-A":
+                    return alpha;
                     break;
                 case "-n":
                 case "-N":
