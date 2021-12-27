@@ -11,13 +11,13 @@ namespace PocetZnaku
             {
                selected_array = Arrays(args[0]);
             }
-            else // Pokud není před spuštěním zadán argument, zvolí se malá písmena.
+            else // Pokud není před spuštěním zadán argument, zvolí se abeceda s malými a velkými písmeny.
             {
                 selected_array = Arrays("-a");
             }
             
             bool work = true;
-            while (work) // Cyklus se opakuje dokud uživatel neopustí program (při metodě Exit nezvolí možnost a nebo ano).
+            while (work) // Cyklus se opakuje dokud uživatel neopustí program (při metodě Exit musí tvolit možnost a nebo ano pro vypnutí).
             {
                 Init(selected_array);
                 work = Exit();
@@ -31,7 +31,7 @@ namespace PocetZnaku
 
             int pocet_pismen = 0;
 
-            for (int i = 0; i < selected_array.Length; i++) // Pro každý jeden cyklus se vybere další písmeno z pole selected_array, do proměnné pocet_pismen se uloží počet výskytů aktuálně počítaného písmene a pokud je vyšší než 0, vypíše počet výskytů daného písmene polečně se samostatným znakem.
+            for (int i = 0; i < selected_array.Length; i++) // Pro každý jeden cyklus se vybere další písmeno z pole selected_array, do proměnné pocet_pismen se uloží počet výskytů aktuálně počítaného písmene a pokud NENÍ roven nule, vypíše počet výskytů daného písmene polečně se samostatným znakem.
             {
                 pocet_pismen = Count(znaky, selected_array[i]);
 
