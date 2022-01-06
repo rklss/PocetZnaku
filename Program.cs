@@ -45,7 +45,7 @@ namespace PocetZnaku
 
         static int Count(string input_string, string input_character) // Funkce spočítá počet výskytů zadaného znaku (input_character) ze zadaného řetězce (input_string).
         {
-            int occurrences = 0;
+            int occurrences;
 
             for (int i = 0; i < input_string.Length; i++)
             {
