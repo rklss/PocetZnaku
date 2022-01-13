@@ -29,7 +29,7 @@ namespace PocetZnaku
             Console.WriteLine("Zadejte větu:");
             string znaky = Console.ReadLine();
 
-            int pocet_pismen = 0;
+            int pocet_pismen;
 
             for (int i = 0; i < selected_array.Length; i++) // Pro každý jeden cyklus se vybere další písmeno z pole selected_array, do proměnné pocet_pismen se uloží počet výskytů aktuálně počítaného písmene a pokud NENÍ roven nule, vypíše počet výskytů daného písmene polečně se samostatným znakem.
             {
